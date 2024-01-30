@@ -1,0 +1,17 @@
+.header{
+    padding-top: 32px;
+    background: #222
+}
+
+.header__container{
+    display: flex;
+    justify-content: center;
+    gap: 716px;
+}
+
+.header__link{
+    font-weight: 500;
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: #F0F4F4;
+}
