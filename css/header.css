@@ -1,17 +1,28 @@
 .header{
     padding-top: 32px;
-    background: #222
+    background: #222;
 }
 
 .header__container{
     display: flex;
-    justify-content: center;
-    gap: 716px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo{
+    width: 254px;
 }
 
 .header__link{
+    font-size: 16px;
+    line-height: 140%;
     font-weight: 500;
     padding: 12px 20px;
     border-radius: 50px;
-    background: #F0F4F4;
+    background-color: #F0F4F4;
+    border: 1px solid transparent;
+}
+
+.header__link:hover{
+    
 }
