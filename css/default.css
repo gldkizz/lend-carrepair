@@ -1,6 +1,7 @@
 html {
     position: relative; /* если на сайте анимации, то не позволяет вываливаться за границы */
     box-sizing: border-box;
+    scroll-behavior: smooth;
   }
   
   *,
@@ -89,9 +90,36 @@ html {
   */
   
   .container {
-    max-width: 1240px;
-    padding: 0 30px;
+    --container-width: 1180px;
+    --container-padding: 30px;
+    max-width: calc(var(--container-width) + var(--container-padding) * 2);
+    padding: 0 var(--container-padding);
     margin: 0 auto;
   }
   
   /* | 30 |             1180               | 30 | */
+
+
+  @media (max-width:1080px){
+    .container{
+      --container-padding: 66px;
+    }
+  }
+
+  @media (max-width: 900px){
+    .container{
+      --container-padding: 44px;
+    }
+  }
+
+  @media(max-width: 660px){
+    .container{
+      --container-padding: 16px;
+    }
+  }
+
+  @media(max-width: 460){
+    .container{
+      --container-padding: 16px;
+    }
+  }
