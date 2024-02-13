@@ -55,7 +55,7 @@
 
         <section class="contact" id="contact">
             <div class="container">
-                <h2 class="contact__title">Заполните форму и&nbsp;мы&nbsp;<span class="contact__title-text contact__title-text_red">свяжемся с&nbsp;вами</span> </h2>
+                <h2 class="contact__title">Заполните форму и&nbsp;мы <span class="contact__title-text contact__title-text_red">свяжемся с&nbsp;вами</span> </h2>
 
                 <form class="contact__form form">
                     <fieldset class="form__fieldset">
@@ -128,15 +128,15 @@
                         </div>
                     </fieldset>
 
-                    <fieldset class="form__fielset">
+                    <fieldset class="form__fieldset">
                         <legend class="form__title">Выберите дату и&nbsp;время</legend>
 
                         <div class="form__months">
                             <button class="form__months-btn form__months-btn_active" type="button">Февраль</button>
                             <button class="form__months-btn" type="button">Март</button>
                             <button class="form__months-btn" type="button">Апрель</button>
-
-                            <div class="form__radio-wrapper">
+                        </div>
+                        <div class="form__radio-wrapper">
                                 <div class="radio">
                                     <input type="radio" name="day" class="radio__input" id="day1">
                                     <label class="radio__label" for="day1">1</label>
@@ -186,9 +186,9 @@
                                     <input type="radio" name="day" class="radio__input" id="day10">
                                     <label class="radio__label" for="day10">10</label>
                                 </div>
-                            </div>
+                        </div>
 
-                            <div class="form__time">
+                        <div class="form__time">
                                 <p class="form__subtitle">Доступное время:</p>
 
                                 <div class="form__radio-wrapper">
@@ -217,11 +217,11 @@
                                         <label class="radio__label" for="time20">20:00</label>
                                     </div>
                                 </div>
-                            </div>
                         </div>
+                        
                     </fieldset>
 
-                    <fieldset class="form__fielset">
+                    <fieldset class="form__fieldset">
                         <legend class="form__title">Заполните поля</legend>
 
                         <div class="form__input-wrapper">
@@ -234,38 +234,45 @@
                         <p class="form__info">Диагностика и&nbsp;ремонт двигателей</p>
                         <p class="form__info">
                             <time class="form__info-date" datetime="2024-03-02T14:00">
-                                <span>03.02</span>
-                                <span>14:00</span>
+                                <span class="form__info-date-day">03.02</span>
+                                <span class="form__info-date-time">14:00</span>
                             </time>
                         </p>
                     </fieldset>
 
-                    <button class="form__btn"><svg width="12.753052" height="9.991699" viewBox="0 0 12.7531 9.9917"
-                            fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <desc>
-                                Created with Pixso.
-                            </desc>
-                            <defs />
-                            <path id="Arrow 3"
-                                d="M1.81372 4.99585L5.526 1.28345C5.823 0.986572 5.823 0.519775 5.526 0.2229C5.229 -0.0742188 4.76233 -0.0742188 4.46533 0.2229L0.222778 4.46558C-0.0742188 4.76245 -0.0742188 5.22925 0.222778 5.52612L4.46533 9.7688C4.76233 10.0659 5.229 10.0659 5.526 9.7688C5.823 9.47192 5.823 9.00513 5.526 8.70825L1.81372 4.99585Z"
-                                fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero" />
-                            <path id="Arrow 3"
-                                d="M12.7531 4.24585L0.753052 4.24585L0.753052 5.74585L12.7531 5.74585L12.7531 4.24585ZM1.81372 4.99585L5.526 1.28345C5.823 0.986572 5.823 0.519775 5.526 0.2229C5.229 -0.0742188 4.76233 -0.0742188 4.46533 0.2229L0.222778 4.46558C-0.0742188 4.76245 -0.0742188 5.22925 0.222778 5.52612L4.46533 9.7688C4.76233 10.0659 5.229 10.0659 5.526 9.7688C5.823 9.47192 5.823 9.00513 5.526 8.70825L1.81372 4.99585Z"
-                                fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd" />
-                        </svg>
-                        <span>Назад</span>
-                    </button>
+                    <div class="form__btn-wrapper">
+                        <button class="form__btn" type="button">
+                            <svg width="12.753052" height="9.991699" viewBox="0 0 12.7531 9.9917"
+                                fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <desc>
+                                    Created with Pixso.
+                                </desc>
+                                <defs />
+                                <path id="Arrow 3"
+                                    d="M1.81372 4.99585L5.526 1.28345C5.823 0.986572 5.823 0.519775 5.526 0.2229C5.229 -0.0742188 4.76233 -0.0742188 4.46533 0.2229L0.222778 4.46558C-0.0742188 4.76245 -0.0742188 5.22925 0.222778 5.52612L4.46533 9.7688C4.76233 10.0659 5.229 10.0659 5.526 9.7688C5.823 9.47192 5.823 9.00513 5.526 8.70825L1.81372 4.99585Z"
+                                    fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero" />
+                                <path id="Arrow 3"
+                                    d="M12.7531 4.24585L0.753052 4.24585L0.753052 5.74585L12.7531 5.74585L12.7531 4.24585ZM1.81372 4.99585L5.526 1.28345C5.823 0.986572 5.823 0.519775 5.526 0.2229C5.229 -0.0742188 4.76233 -0.0742188 4.46533 0.2229L0.222778 4.46558C-0.0742188 4.76245 -0.0742188 5.22925 0.222778 5.52612L4.46533 9.7688C4.76233 10.0659 5.229 10.0659 5.526 9.7688C5.823 9.47192 5.823 9.00513 5.526 8.70825L1.81372 4.99585Z"
+                                    fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd" />
+                            </svg>
+                            <span>Назад</span>
+                        </button>
 
-                    <button class="form__btn form__btn_next"><svg width="12.753052" height="9.991699" viewBox="0 0 12.7531 9.9917" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <desc>
-                                Created with Pixso.
-                        </desc>
-                        <defs/>
-                        <path id="Arrow 3" d="M10.9393 4.99585L7.22705 1.28345C6.93005 0.986572 6.93005 0.519775 7.22705 0.2229C7.52405 -0.0742188 7.99072 -0.0742188 8.28772 0.2229L12.5303 4.46558C12.8273 4.76245 12.8273 5.22925 12.5303 5.52612L8.28772 9.7688C7.99072 10.0659 7.52405 10.0659 7.22705 9.7688C6.93005 9.47192 6.93005 9.00513 7.22705 8.70825L10.9393 4.99585Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
-                        <path id="Arrow 3" d="M0 4.24585L12 4.24585L12 5.74585L0 5.74585L0 4.24585ZM10.9393 4.99585L7.22705 1.28345C6.93005 0.986572 6.93005 0.519775 7.22705 0.2229C7.52405 -0.0742188 7.99072 -0.0742188 8.28772 0.2229L12.5303 4.46558C12.8273 4.76245 12.8273 5.22925 12.5303 5.52612L8.28772 9.7688C7.99072 10.0659 7.52405 10.0659 7.22705 9.7688C6.93005 9.47192 6.93005 9.00513 7.22705 8.70825L10.9393 4.99585Z" fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd"/>
-                    </svg>
-                    <span>Далее</span>
-                    </button>
+                        <button class="form__btn form__btn_next" type="button">
+                        <span>Далее</span>
+                        <svg width="12.753052" height="9.991699" viewBox="0 0 12.7531 9.9917" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                    Created with Pixso.
+                            </desc>
+                            <defs/>
+                            <path id="Arrow 3" d="M10.9393 4.99585L7.22705 1.28345C6.93005 0.986572 6.93005 0.519775 7.22705 0.2229C7.52405 -0.0742188 7.99072 -0.0742188 8.28772 0.2229L12.5303 4.46558C12.8273 4.76245 12.8273 5.22925 12.5303 5.52612L8.28772 9.7688C7.99072 10.0659 7.52405 10.0659 7.22705 9.7688C6.93005 9.47192 6.93005 9.00513 7.22705 8.70825L10.9393 4.99585Z" fill="currentColor" fill-opacity="1.000000" fill-rule="nonzero"/>
+                            <path id="Arrow 3" d="M0 4.24585L12 4.24585L12 5.74585L0 5.74585L0 4.24585ZM10.9393 4.99585L7.22705 1.28345C6.93005 0.986572 6.93005 0.519775 7.22705 0.2229C7.52405 -0.0742188 7.99072 -0.0742188 8.28772 0.2229L12.5303 4.46558C12.8273 4.76245 12.8273 5.22925 12.5303 5.52612L8.28772 9.7688C7.99072 10.0659 7.52405 10.0659 7.22705 9.7688C6.93005 9.47192 6.93005 9.00513 7.22705 8.70825L10.9393 4.99585Z" fill="currentColor" fill-opacity="1.000000" fill-rule="evenodd"/>
+                        </svg>
+                        </button>
+
+                        <!-- <button class="form__btn form__btn_submit" type="submit">Далее</button> -->
+
+                    </div>
                 </form>
             </div>
         </section>

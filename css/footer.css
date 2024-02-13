@@ -38,4 +38,29 @@
     margin-bottom: 0;
 }
 
-.footer__list-link {}
+@media(max-width: 1080px){
+    .footer__logo{
+        grid-column: 1 / span 2;
+    }
+}
+@media(max-width: 900px){
+
+}
+@media(max-width: 660px){
+    .footer__container{
+        grid-template-areas: 
+        "logo"
+        "copyright"
+        "list";
+        gap:35px;
+    }
+    .footer__logo{
+        max-width: 229px;
+    }
+    .footer__list {
+        justify-self: left;
+    }
+}
+@media(max-width: 480px){
+
+}

@@ -95,7 +95,20 @@
     .hero__about{
         margin-top: 0;
     }
+    .hero__year{
+        align-self: start;
+    }
     .hero__tagline{
         font-size: 16px;
     }
-}                                                                                                                                                                            
+}  
+
+@media(max-width: 480px){
+    .hero{
+        background-size: 208px;
+    }
+    .hero__title{
+        font-size: 44px;
+    }
+
+}
