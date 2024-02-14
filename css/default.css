@@ -118,7 +118,7 @@ html {
     }
   }
 
-  @media(max-width: 460){
+  @media(max-width: 480){
     .container{
       --container-padding: 16px;
     }

@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мастерский ремонт</title>
 
+    <link rel="icon" href="images/wheel.png">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
 </head>
 
 <body>
@@ -58,7 +60,7 @@
                 <h2 class="contact__title">Заполните форму и&nbsp;мы <span class="contact__title-text contact__title-text_red">свяжемся с&nbsp;вами</span> </h2>
 
                 <form class="contact__form form">
-                    <fieldset class="form__fieldset">
+                    <fieldset class="form__fieldset form__fieldset_active">
                         <legend class="form__title">Выберите нужное направление</legend>
 
 
@@ -208,12 +210,12 @@
                                     </div>
 
                                     <div class="radio">
-                                        <input type="radio" name="time" class="radio__input" id="time1">
+                                        <input type="radio" name="time" class="radio__input" id="time17">
                                         <label class="radio__label" for="time17">17:00</label>
                                     </div>
 
                                     <div class="radio">
-                                        <input type="radio" name="time" class="radio__input" id="time10">
+                                        <input type="radio" name="time" class="radio__input" id="time20">
                                         <label class="radio__label" for="time20">20:00</label>
                                     </div>
                                 </div>
@@ -241,7 +243,7 @@
                     </fieldset>
 
                     <div class="form__btn-wrapper">
-                        <button class="form__btn" type="button">
+                        <button class="form__btn form__btn_prev" type="button">
                             <svg width="12.753052" height="9.991699" viewBox="0 0 12.7531 9.9917"
                                 fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <desc>
@@ -270,7 +272,7 @@
                         </svg>
                         </button>
 
-                        <!-- <button class="form__btn form__btn_submit" type="submit">Далее</button> -->
+                        <button class="form__btn form__btn_submit" type="submit">Отправить</button>
 
                     </div>
                 </form>

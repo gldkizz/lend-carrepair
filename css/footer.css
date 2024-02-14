@@ -43,24 +43,22 @@
         grid-column: 1 / span 2;
     }
 }
-@media(max-width: 900px){
-
-}
 @media(max-width: 660px){
     .footer__container{
         grid-template-areas: 
         "logo"
         "copyright"
         "list";
-        gap:35px;
+        gap: 0;
     }
     .footer__logo{
         max-width: 229px;
+        margin-bottom: 32px;
+    }
+    .footer__copyright{
+        margin-bottom: 16px;
     }
     .footer__list {
-        justify-self: left;
+        justify-self: start;
     }
-}
-@media(max-width: 480px){
-
 }
