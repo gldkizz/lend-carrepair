@@ -1,4 +1,4 @@
-import { fetchData } from "./fetchData";
+import { fetchData } from "./fetchData.js";
 
 const form = document.querySelector('.form');
 const formBtnPrev = document.querySelector('.form__btn_prev');
@@ -9,11 +9,18 @@ const formFieldsetClient = document.querySelector('.form__fieldset_client')
 const formFieldsetType = document.querySelector('.form__fieldset_type')
 const formFieldsetDate = document.querySelector('.form__fieldset_date')
 const formFieldsets = [formFieldsetType,formFieldsetDate,formFieldsetClient]
+const typeRadioWrapper = document.querySelector(".form__radio-wrapper_type")
+const dayRadioWrapper = document.querySelector(".form__radio-wrapper_day")
+const timeRadioWrapper = document.querySelector(".form__radio-wrapper_time")
+const formMonthsWrapper = document.querySelector('.form__months')
 
+const currentMonth = new Intl.DateTimeFormat('ru-RU',{month: 'long'}).format(new Date())
+let month = currentMonth
+console.log(month)
 let currentStep = 0;
 
 const data = await fetchData()
-console.log('data:', data)
+
 const dataToWrite = {
     dataType: {},
     day: '',
@@ -30,14 +37,14 @@ const createRadioBtns = (wrapper,name,data) => {
         const radioInput = document.createElement('input')
         radioInput.className = 'radio__input'
         radioInput.type = 'radio'
-        radioInput.name = 'day'
+        radioInput.name = name
         radioInput.id = item.value
         radioInput.value = item.value
 
         const radioLabel = document.createElement('label')
-        radioInput.className = 'radio__label'
-        radioInput.textContent = item.title
-        radioInput.htmlFor = item.value
+        radioLabel.className = 'radio__label'
+        radioLabel.textContent = item.title
+        radioLabel.htmlFor = item.value
 
         radioDiv.append(radioInput,radioLabel)
         wrapper.append(radioDiv)
@@ -70,6 +77,40 @@ const updateFieldsetVisibility = () => {
     }
 }
 
+const createFormMonth = (months) => {
+    formMonthsWrapper.textContent = ''
+    const buttonsMonth = months.map(item => {
+        const btn = document.createElement('button')
+        btn.className = 'form__months-btn'
+        btn.type = "button"
+        btn.textContent = `${item[0].toUpperCase()}${item.substring(1).toLowerCase()}`
+
+        if(item === month) {
+            btn.classList.add('form__months-btn_active')
+        }
+
+        return btn
+    })
+
+    formMonthsWrapper.append(...buttonsMonth)
+
+    buttonsMonth.forEach(btn => {
+        btn.addEventListener('click',({target}) => {
+            if (target.classList.contains('form__months-btn_active')){
+                return
+            }
+            buttonsMonth.forEach(btn => {
+                btn.classList.remove('form__months-btn_active')
+            })
+            target.classList.add('form__months-btn_active')
+
+            month = target.textContent.toLowerCase()
+
+            // const data.find(item => item.type === )
+        })
+    })
+}
+
 const createFormTime = () => {
     formTime.style.display = 'block'
 }
@@ -78,7 +119,15 @@ const handleInputForm = ({currentTarget,target}) => { // деструктури�
     if(currentTarget.type.value && currentStep === 0){
         formBtnNext.disabled = false
 
-        // createFormMonth()
+        const typeObject = data.find(item => item.type === currentTarget.type.value)
+
+        dataToWrite.dataType.type = typeObject.type
+        dataToWrite.dataType.type = typeObject.title
+
+        const date = typeObject.date
+        const months = date.map(item => item.month)
+
+        createFormMonth(months)
         // createFormDay()
     }
 
@@ -110,6 +159,15 @@ const handleInputForm = ({currentTarget,target}) => { // деструктури�
     }
 }
 
+const renderTypeFiledset = () => {
+    const typeData = data.map((item) => ({
+        value: item.type,
+        title: item.title,
+    }))
+
+    createRadioBtns(typeRadioWrapper, 'type', typeData)
+}
+
 
 const init = () => {
     formBtnNext.disabled = true
@@ -130,6 +188,7 @@ const init = () => {
         }
     })
     updateFieldsetVisibility()
+    renderTypeFiledset()
     
     form.addEventListener('input', handleInputForm)
 }
