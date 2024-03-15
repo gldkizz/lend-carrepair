@@ -1,3 +1,5 @@
+import { fetchData } from "./fetchData";
+
 const form = document.querySelector('.form');
 const formBtnPrev = document.querySelector('.form__btn_prev');
 const formBtnNext = document.querySelector('.form__btn_next');
@@ -9,6 +11,39 @@ const formFieldsetDate = document.querySelector('.form__fieldset_date')
 const formFieldsets = [formFieldsetType,formFieldsetDate,formFieldsetClient]
 
 let currentStep = 0;
+
+const data = await fetchData()
+console.log('data:', data)
+const dataToWrite = {
+    dataType: {},
+    day: '',
+    time: '',
+}
+
+const createRadioBtns = (wrapper,name,data) => {
+    wrapper.textContent = ''
+
+    data.forEach(item => {
+        const radioDiv = document.createElement('div')
+        radioDiv.className = 'radio'
+
+        const radioInput = document.createElement('input')
+        radioInput.className = 'radio__input'
+        radioInput.type = 'radio'
+        radioInput.name = 'day'
+        radioInput.id = item.value
+        radioInput.value = item.value
+
+        const radioLabel = document.createElement('label')
+        radioInput.className = 'radio__label'
+        radioInput.textContent = item.title
+        radioInput.htmlFor = item.value
+
+        radioDiv.append(radioInput,radioLabel)
+        wrapper.append(radioDiv)
+    })
+
+} 
 
 const updateFieldsetVisibility = () => {
     for(let i = 0; i < formFieldsets.length; i++){
